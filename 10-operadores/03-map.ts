@@ -1,19 +1,21 @@
 export function map(
-    arreglo:any[], 
+    arregloOriginal:any[], 
     funcion: (valorActual: any, 
               indice?: number, 
               arreglo?: any[]) => any[]
 ): any[] {
 
     const arregloMap = [];
-    for(let i; i < arregloMap; i++){
+    const arreglo = [...arregloOriginal];
+    for(let i = 0; i < arregloMap.length; i++){
 
         const respuestaFuncion = funcion(
             arreglo[i],
             i,
-            arreglo,
+            [...arreglo],
         );
         
+        arregloMap.push(respuestaFuncion);
 
 
     }
