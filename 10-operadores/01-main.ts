@@ -1,9 +1,12 @@
+import { filter } from "./02-filter";
+import { forEach } from "./03-forEach";
+
 function main(){
     
         const arregloEstudiantes = [
             {id:1, nombre:"Adrian",nota:6},
             {id:2, nombre:"Vicente",nota:4},
-            {id:3, nombre:"Daniel",nota:4},
+            {id:3, nombre:"Daniel",nota:10},
             {id:4, nombre:"Cesar",nota:4},
             {id:5, nombre:"Julian",nota:7},            
         ];
@@ -14,8 +17,8 @@ function main(){
 /*const respuestaForEach = arregloEstudiantes
     .forEach(
         function(valorActual,indice,arreglo){
+            valorActual.nota = valorActual.nota*2;
             console.log(valorActual.nota);
-            valorActual.nota20 = valorActual.nota*2;
 
 
         }
@@ -27,7 +30,7 @@ function main(){
     //Enviamos -> valorActual modificado
     //Recibir -> Nuevo arreglo con valores modificados
 
-  /*  const respuestaMap = arregloEstudiantes
+   /* const respuestaMap = arregloEstudiantes
         .map(
             function(valorActual, i, arreglo){
 
@@ -48,7 +51,7 @@ function main(){
     //Enviamos -> condicion
     //Recibir -> Nuevo arreglo con valores filtrados
 
-   /* const respuestaFilter = arregloEstudiantes
+   /*const respuestaFilter = arregloEstudiantes
             .filter(
                 function(valorActual, i , arreglo){
                     const condicion7 = valorActual.nota >= 7;
@@ -96,7 +99,7 @@ function main(){
     //Enviamos -> CALCULO
     //RECIBIR -> Valor
     
-    const respuestaReduce = arregloEstudiantes
+    /*const respuestaReduce = arregloEstudiantes
                      .reduce(
                          function(acumulador, valorActual, i, arr){ // funcion 
 
@@ -108,8 +111,31 @@ function main(){
 
                     
                      console.log(respuestaReduce);
-                     console.log(arregloEstudiantes);
+                     console.log(arregloEstudiantes); */
 
+
+   const filterNuestro =  filter(
+        arregloEstudiantes, 
+        function(valorActual,i, arr){
+        //console.log('valor:', valorActual);
+        //console.log('indice:', i);
+        //console.log('arreglo:', arr);
+        return valorActual.nota >= 7;
+        }
+   );
+
+   console.log('RespuestaFilterNuestro:', filterNuestro);
+   console.log(arregloEstudiantes);
+
+   /*const forEachNuestro =  forEach(
+    arregloEstudiantes, 
+    function(valorActual,i, arr){
+        valorActual.nota = valorActual.nota*2;
+        console.log(valorActual.nota);
+    }
+);
+
+console.log('Respuesta:', forEachNuestro);*/
 
 }
 
