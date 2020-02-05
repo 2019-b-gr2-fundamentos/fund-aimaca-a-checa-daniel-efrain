@@ -1,5 +1,7 @@
 import { filter } from "./02-filter";
 import { forEach } from "./03-forEach";
+import { map } from "./03-map";
+import { some } from "./04-some";
 
 function main(){
     
@@ -30,7 +32,7 @@ function main(){
     //Enviamos -> valorActual modificado
     //Recibir -> Nuevo arreglo con valores modificados
 
-   /* const respuestaMap = arregloEstudiantes
+    /*const respuestaMap = arregloEstudiantes
         .map(
             function(valorActual, i, arreglo){
 
@@ -114,17 +116,20 @@ function main(){
                      console.log(arregloEstudiantes); */
 
 
-   const filterNuestro =  filter(
+   const someNuestro =  some(
         arregloEstudiantes, 
         function(valorActual,i, arr){
-        //console.log('valor:', valorActual);
-        //console.log('indice:', i);
-        //console.log('arreglo:', arr);
-        return valorActual.nota >= 7;
-        }
+
+            const condicion = valorActual.nota < 7;
+                        //condicion truty o true
+                        return condicion;
+            
+            
+            }
+            
    );
 
-   console.log('RespuestaFilterNuestro:', filterNuestro);
+   console.log('RespuestaSome:', someNuestro);
    console.log(arregloEstudiantes);
 
    /*const forEachNuestro =  forEach(

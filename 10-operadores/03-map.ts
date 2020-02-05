@@ -2,7 +2,7 @@ export function map(
     arregloOriginal:any[], 
     funcion: (valorActual: any, 
               indice?: number, 
-              arreglo?: any[]) => any[]
+              arreglo?: any[]) => any
 ): any[] {
 
     const arregloMap = [];
@@ -12,7 +12,7 @@ export function map(
         const respuestaFuncion = funcion(
             arreglo[i],
             i,
-            [...arreglo],
+            arreglo,
         );
         
         arregloMap.push(respuestaFuncion);

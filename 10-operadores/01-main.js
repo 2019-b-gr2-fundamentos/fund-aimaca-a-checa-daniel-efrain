@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var _02_filter_1 = require("./02-filter");
+var _04_some_1 = require("./04-some");
 function main() {
     var arregloEstudiantes = [
         { id: 1, nombre: "Adrian", nota: 6 },
@@ -23,22 +23,22 @@ function main() {
     //Map -> Transformar el arreglo (Mutar el arreglo)
     //Enviamos -> valorActual modificado
     //Recibir -> Nuevo arreglo con valores modificados
-    /* const respuestaMap = arregloEstudiantes
-         .map(
-             function(valorActual, i, arreglo){
- 
-                 const NuevoObjeto = {
-                 id:valorActual.id,
-                 nombre:valorActual.nombre,
-                 nota:valorActual.nota,
-                 nota20:valorActual.nota*2
-                 };
-                 return NuevoObjeto;
-                 
-             }
-         );
-         console.log("Respueasta Map", respuestaMap);
-         console.log("Respueasta Map", arregloEstudiantes);*/
+    /*const respuestaMap = arregloEstudiantes
+        .map(
+            function(valorActual, i, arreglo){
+
+                const NuevoObjeto = {
+                id:valorActual.id,
+                nombre:valorActual.nombre,
+                nota:valorActual.nota,
+                nota20:valorActual.nota*2
+                };
+                return NuevoObjeto;
+                
+            }
+        );
+        console.log("Respueasta Map", respuestaMap);
+        console.log("Respueasta Map", arregloEstudiantes);*/
     //Filter -> filtra el arreglo 
     //Enviamos -> condicion
     //Recibir -> Nuevo arreglo con valores filtrados
@@ -95,13 +95,12 @@ function main() {
                     
                      console.log(respuestaReduce);
                      console.log(arregloEstudiantes); */
-    var filterNuestro = _02_filter_1.filter(arregloEstudiantes, function (valorActual, i, arr) {
-        //console.log('valor:', valorActual);
-        //console.log('indice:', i);
-        //console.log('arreglo:', arr);
-        return valorActual.nota >= 7;
+    var someNuestro = _04_some_1.some(arregloEstudiantes, function (valorActual, i, arr) {
+        var condicion = valorActual.nota < 7;
+        //condicion truty o true
+        return condicion;
     });
-    console.log('RespuestaFilterNuestro:', filterNuestro);
+    console.log('RespuestaSome:', someNuestro);
     console.log(arregloEstudiantes);
     /*const forEachNuestro =  forEach(
      arregloEstudiantes,
